@@ -1,0 +1,20 @@
+Public Function Payroll_Accounts(Division As String, Account As String, Department)
+
+
+If Application.WorksheetFunction.IsText(Department) Then
+
+    Department1 = "00"
+    Payroll_Accounts = Format(Division, "00#") & "-" & Account & "-" & Department1
+ElseIf Left(Department, 2) / 1 = 10 Then
+    Department1 = Left(Department, 2)
+    Payroll_Accounts = Format(Division, "00#") & "-" & Account & "-" & Department1
+
+ElseIf Department / 1 > 0 Then
+
+    Department1 = Left(Department, 2) & "-" & Right(Department, 3)
+    Payroll_Accounts = Format(Division, "00#") & "-" & Account & "-" & Department1
+End If
+
+
+
+End Funct
